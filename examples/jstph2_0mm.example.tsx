@@ -1,10 +1,10 @@
 import { JsCadView } from "jscad-fiber"
-import { JSTZH1_5mm } from "lib/index"
+import { JSTPH2_0mm } from "lib/index"
 
 export default () => {
   return (
     <JsCadView showGrid zAxisUp>
-      <JSTZH1_5mm numPins={7} />
+      <JSTPH2_0mm numPins={4} />
     </JsCadView>
   )
 }
