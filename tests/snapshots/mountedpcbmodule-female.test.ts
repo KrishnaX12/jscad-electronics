@@ -1,4 +1,5 @@
 import { expect, test } from "bun:test"
+import "../fixtures/png-matcher"
 import { renderFootprint } from "tests/helpers/render-footprint"
 
 test("mountedpcbmodule with female header and holes", async () => {
