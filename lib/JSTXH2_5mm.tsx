@@ -10,7 +10,7 @@ import {
 } from "jscad-fiber"
 import { FootprintPlatedHole } from "./FootprintPlatedHole"
 
-export interface JSTPH2mmProps {
+export interface JSTXH2_5mmProps {
   numPins?: number
   pitch?: number
   bodyWidth?: number
@@ -32,9 +32,9 @@ export interface JSTPH2mmProps {
  * The body follows the PH family envelope while the pin locations and pad
  * dimensions can be driven directly by a footprinter definition.
  */
-export const JSTPH2mm = ({
+export const JSTXH2_5mm = ({
   numPins = 2,
-  pitch = 2,
+  pitch = 2.5,
   bodyWidth,
   bodyDepth = 5,
   bodyHeight = 6,
@@ -46,7 +46,7 @@ export const JSTPH2mm = ({
   showFootprint = true,
   bodyColor = "#f2eee1",
   pinColor = "#b9a56b",
-}: JSTPH2mmProps) => {
+}: JSTXH2_5mmProps) => {
   const pinSpan = (numPins - 1) * pitch
   const resolvedBodyWidth = Math.max(bodyWidth ?? 0, pinSpan + 3.9)
   const bodyCenterY = pinRowY - bodyDepth / 2 + 0.5
@@ -121,7 +121,7 @@ export const JSTPH2mm = ({
         Array.from({ length: numPins }).map((_, index) => {
           const hole: PcbPlatedHole = {
             type: "pcb_plated_hole",
-            pcb_plated_hole_id: `jstph_${index}`,
+            pcb_plated_hole_id: `jstxh_${index}`,
             shape: "circular_hole_with_rect_pad",
             x: startX + index * pitch,
             y: pinRowY,
@@ -147,4 +147,4 @@ export const JSTPH2mm = ({
   )
 }
 
-export default JSTPH2mm
+export default JSTXH2_5mm

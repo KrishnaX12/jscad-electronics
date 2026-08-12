@@ -124,6 +124,8 @@ export const JSTZH1_5mm = ({
                 hole_diameter: 0.73,
                 rect_pad_width: 1.03,
                 rect_pad_height: 1.73,
+                hole_offset_x: 0,
+                hole_offset_y: 0,
                 hole_shape: "circle",
                 pad_shape: "rect",
                 layers: ["top", "bottom"],
@@ -139,6 +141,7 @@ export const JSTZH1_5mm = ({
                 hole_width: 0.73,
                 outer_height: 1.73,
                 outer_width: 1.03,
+                ccw_rotation: 0,
                 layers: ["top", "bottom"],
                 port_hints: [`${i + 1}`],
               }
